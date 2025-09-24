@@ -1,5 +1,5 @@
 #calculadora basica
-#by: camille araujo 24-sisn-2-035
+#by: camille araujo 
 
 #Definimos funciones para cada operacion matematica
 def sumar(a, b):
@@ -46,4 +46,5 @@ elif opcion == "*":
 elif opcion == "/":
     print("resultado:", dividir(num1, num2))
 else:
+
     print("Opcion no valida, intenta otra vez :(.")
