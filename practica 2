@@ -1,0 +1,47 @@
+# clase padre: Animal
+# Esta clase representa algo general, todos los animales tienen nombre  sonido.
+class Animal:
+    def __init__(self, nombre, sonido):
+        self.nombre = nombre      # Atributo: nombre del animal
+        self.sonido = sonido      # Atributo: sonido que hace el animal
+
+        # Metodo: accion general de los animales
+    def hacer_sonido(self):
+        print(f"{self.nombre} hace: {self.sonido}")
+
+# Clase hija: perro (hereda de animal)
+class perro(Animal):
+    def __init__(self, nombre, sonido, raza):
+        # Llamamos a la clase padre para heredar nombre y sonido
+        super().__init__(nombre, sonido)
+        self.raza = raza
+
+    # Metodo propio del perro
+    def correr(self):
+        print(f"{self.nombre} corre feliz por el parque ;3")
+
+# Clase hija: Gato (hereda de animal)
+class Gato(Animal):
+    def __init__(self, nombre, sonido, color):
+        super().__init__(nombre, sonido)
+        self.color = color       # Atributo propio del gato
+
+    # Metodo propio del gato
+    def dormir(self):
+        print(f"{self.nombre} se acurruca y duerme ;3")
+
+# --- creando objetos ---
+perro1 = perro("Bobby", "guau guau", "labrador")
+Gato1 = Gato("Michi", "Miau", "Blanco")
+
+# --- usando metodos heredados ---
+perro1.hacer_sonido()
+Gato1.hacer_sonido()
+
+# --- usando metodos propios ---
+perro1.correr()
+Gato1.dormir()
+
+# --- mostrando informacion adicional---
+print("El perro se llama:", perro1.nombre, "y es de raza", perro1.raza)
+print("El gato se llama:", Gato1.nombre, "y su color es", Gato1.color)
